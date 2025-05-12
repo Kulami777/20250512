@@ -58,8 +58,10 @@ function drawConnections(keypoints, points, lineColor) {
   for (let i = 0; i < points.length - 1; i++) {
     const startIdx = points[i];
     const endIdx = points[i + 1];
-    const [x1, y1] = keypoints[startIdx];
-    const [x2, y2] = keypoints[endIdx];
-    line(x1, y1, x2, y2); // 繪製連線
+    if (keypoints[startIdx] && keypoints[endIdx]) {
+      const [x1, y1] = keypoints[startIdx];
+      const [x2, y2] = keypoints[endIdx];
+      line(x1, y1, x2, y2); // 繪製連線
+    }
   }
 }
