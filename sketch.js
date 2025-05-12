@@ -62,6 +62,8 @@ function drawConnections(keypoints, points, lineColor) {
       const [x1, y1] = keypoints[startIdx];
       const [x2, y2] = keypoints[endIdx];
       line(x1, y1, x2, y2); // 繪製連線
+    } else {
+      console.warn(`Invalid keypoints: ${startIdx}, ${endIdx}`);
     }
   }
 }
